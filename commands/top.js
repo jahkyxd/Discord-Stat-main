@@ -9,9 +9,6 @@ module.exports = {
     aliases: ["top10"],
     run: async (client, message, args) => {
         let member = message.guild.members.cache.get(message.author.id)
-        if (!message.content.startsWith("!top")) {
-            return;
-        }
         let data = await db
             .all()
             .filter(x => x.ID.startsWith(`1total`))
